@@ -1,0 +1,24 @@
+<SearchInput />
+<Tab tabs="{{tabs}}" binditemChange="handleItemChange">
+  <block wx:if="{{tabs[0].isActive}}">
+    <view class="first_tab">
+      <navigator class="goods_item"
+        wx:for="{{goodsList}}"
+        wx:key="goods_id"
+        url="/pages/goods_detail/index?goods_id={{item.goods_id}}"
+      >
+        <!-- 左侧图片容器 -->
+        <view class="goods_img_wrap">
+          <image mode="widthFix" src="{{item.goods_small_logo ? item.goods_small_logo :'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594643105934&di=58dbfe5d045a22a0d9cf2c4fd0e81fd4&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F5dad8888d06bb5358009c6072182ec7113ca12c0186b-vFfJHA_fw658'}}"></image>
+        </view>
+        <!-- 右侧商品容器 -->
+        <view class="goods_info_wrap">
+          <view class="goods_name">{{item.goods_name}}</view>
+          <view class="goods_price">￥{{item.goods_price}}</view>
+        </view>
+      </navigator>
+    </view>
+  </block>
+  <block wx:elif="{{tabs[1].isActive}}">1</block>
+  <block wx:else>2</block>
+</Tab>

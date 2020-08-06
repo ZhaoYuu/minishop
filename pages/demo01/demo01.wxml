@@ -1,0 +1,17 @@
+<!--pages/demo01/demo01.wxml-->
+<text>pages/demo01/demo01.wxml</text>
+<input type="text" bindinput="handleInput"/>
+<button bindtap="handletap" data-operation="{{1}}">+1</button>
+<button bindtap="handletap" data-operation="{{-1}}">-1</button>
+<view>{{num}}</view>
+
+<!-- 父组件向子组件传递数据通过属性传递 -->
+<!-- 在子组件上进行接收 -->
+<tab tabs="{{tabs}}" binditemChange="handleItemChange">
+  <block wx:if="{{tabs[0].isActive}}">0</block>
+  <block wx:elif="{{tabs[1].isActive}}">1</block>
+  <block wx:elif="{{tabs[2].isActive}}">2</block>
+  <block wx:else>3</block>
+</tab>
+
+
